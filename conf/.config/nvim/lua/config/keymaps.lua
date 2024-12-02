@@ -31,15 +31,18 @@ keymap("n", "<C-l>", "<C-w>l", opts)  -- 右移窗口
 -- 使用箭头键调整窗口大小
 keymap("n", "<C-Up>", ":resize +2<CR>", opts)    -- 减小高度
 keymap("n", "<C-Down>", ":resize -2<CR>", opts)  -- 增加高度
-keymap("n", "<C-Left>", ":vertical resize -2<CR>", opts)  -- 减小宽度
+keymap("n", "<C-Left>", ":vertical resize -2<CR>", opts)   -- 减小宽度
 keymap("n", "<C-Right>", ":vertical resize +2<CR>", opts)  -- 增加宽度
 
 -- 导航缓冲区
-keymap("n", "<leader>n", ":bnext<CR>", opts)  -- 切换到下一个缓冲区
+keymap("n", "<leader>n", ":bnext<CR>", opts)      -- 切换到下一个缓冲区
 keymap("n", "<leader>p", ":bprevious<CR>", opts)  -- 切换到上一个缓冲区
 
 -- 移动光标
-
+keymap("n", "<leader>h", "^", opts)     -- 移动光标至行首
+keymap("n", "<leader>l", "$", opts)     -- 移动光标至行尾
+-- keymap("n", "<leader>j", "5j", opts)    -- 移动光标下五行
+-- keymap("n", "<leader>k", "5k", opts)    -- 移动光标下五行
 
 -- 移动文本
 keymap("n", "<A-j>", ":m .+1<CR>==", opts)  -- 向下移动当前行
@@ -48,8 +51,8 @@ keymap("n", "<A-k>", ":m .-2<CR>==", opts)  -- 向上移动当前行
 
 -- 插入模式 ------------------------------------------------------------------------------------
 -- 快速按 jk 或 kj 退出插入模式
-keymap("i", "jk", "<ESC>", opts)
-keymap("i", "kj", "<ESC>", opts)
+keymap("i", "jk", "<ESC>l", opts)
+keymap("i", "kj", "<ESC>l", opts)
 
 
 -- 可视模式 ------------------------------------------------------------------------------------
