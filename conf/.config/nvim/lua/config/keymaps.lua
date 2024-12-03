@@ -35,8 +35,10 @@ keymap("n", "<C-Left>", ":vertical resize -2<CR>", opts)   -- 减小宽度
 keymap("n", "<C-Right>", ":vertical resize +2<CR>", opts)  -- 增加宽度
 
 -- 导航缓冲区
-keymap("n", "<leader>n", ":bnext<CR>", opts)      -- 切换到下一个缓冲区
-keymap("n", "<leader>p", ":bprevious<CR>", opts)  -- 切换到上一个缓冲区
+keymap("n", "<leader>j", ":bnext<CR>", opts)
+keymap("n", "<leader>k", ":bprevious<CR>", opts)
+keymap("n", "<leader>d", ":bdelete<CR>", opts)
+keymap("n", "<leader>D", ":only<CR>", opts)
 
 -- 移动光标
 keymap("n", "<leader>h", "^", opts)     -- 移动光标至行首
@@ -47,6 +49,7 @@ keymap("n", "<leader>l", "$", opts)     -- 移动光标至行尾
 -- 移动文本
 keymap("n", "<A-j>", ":m .+1<CR>==", opts)  -- 向下移动当前行
 keymap("n", "<A-k>", ":m .-2<CR>==", opts)  -- 向上移动当前行
+
 
 
 -- 插入模式 ------------------------------------------------------------------------------------

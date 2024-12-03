@@ -24,27 +24,58 @@ vim.opt.rtp:prepend(lazypath)
 
 require("lazy").setup({
 -- colorscheme
+    {
+        "vim-airline/vim-airline",
+        dependencies = {
+            "vim-airline/vim-airline-themes",
+        },
+        config = function()
+            require("..plugin.airline")
+        end,
+    },
+    -- vscode like
     {"Mofiqul/vscode.nvim", event = {"VimEnter"}},
+
+    -- 
     --{"tanvirtin/monokai.nvim", event = {"VimEnter"}},
+    --{ "lunarvim/darkplus.nvim", event = {"VimEnter"}},
     
 -- cmp
 	-- Vscode-like pictograms
 	{"onsails/lspkind.nvim", event = { "VimEnter" }},
+
 	-- Auto-completion engine
 	{
 		"hrsh7th/nvim-cmp",
 		dependencies = {
 			"lspkind.nvim",
 			"hrsh7th/cmp-nvim-lsp", -- lsp auto-completion
+			"hrsh7th/cmp-nvim-lua", -- 
 			"hrsh7th/cmp-buffer", -- buffer auto-completion
 			"hrsh7th/cmp-path", -- path auto-completion
 			"hrsh7th/cmp-cmdline", -- cmdline auto-completion
 		},
 		config = function()
-			require("..plugin.nvim-cmp")
-		end,
+            require("..plugin.nvim-cmp")
+        end,
 	},
+
 	-- Code snippet engine
 	{"L3MON4D3/LuaSnip", version = "v2.*"},
+
+    -- autopairs 
+    {
+        'windwp/nvim-autopairs',
+        event = "InsertEnter",
+        dependencies = {
+            "hrsh7th/nvim-cmp",  -- 确保已经安装了 nvim-cmp
+        },
+        config = true
+        --config = function()
+        --    require("..plugin.nvim-autopairs")  -- 调用 autopairs.lua 文件中的配置
+        --end,
+        -- use opts = {} for passing setup options
+        -- this is equivalent to setup({}) function
+    },
 
 })
