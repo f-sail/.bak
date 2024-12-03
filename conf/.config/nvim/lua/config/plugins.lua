@@ -21,6 +21,7 @@ vim.opt.rtp:prepend(lazypath)
 -- BufAdd       当缓冲区被添加时触发。
 -- CursorHold   当光标在一个位置停留一段时间后触发。
 -- CmdlineEnter 当进入命令行模式时触发。
+-- VeryLazy
 
 require("lazy").setup({
 -- colorscheme
@@ -39,7 +40,15 @@ require("lazy").setup({
     -- 
     --{"tanvirtin/monokai.nvim", event = {"VimEnter"}},
     --{ "lunarvim/darkplus.nvim", event = {"VimEnter"}},
-    
+
+-- 
+    -- flash.nvim
+    {
+        "folke/flash.nvim",
+        event = {"VeryLazy"},
+        keys = require("../plugin.flash").keys,
+    },
+
 -- cmp
 	-- Vscode-like pictograms
 	{"onsails/lspkind.nvim", event = { "VimEnter" }},
@@ -77,5 +86,8 @@ require("lazy").setup({
         -- use opts = {} for passing setup options
         -- this is equivalent to setup({}) function
     },
+-- tag
+    -- terrsistter
+    {"nvim-treesitter/nvim-treesitter"}
 
 })
