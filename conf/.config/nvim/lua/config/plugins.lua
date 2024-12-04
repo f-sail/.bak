@@ -87,7 +87,16 @@ require("lazy").setup({
         -- this is equivalent to setup({}) function
     },
 -- tag
-    -- terrsistter
-    {"nvim-treesitter/nvim-treesitter"}
+    -- treesitter
+    {
+        "nvim-treesitter/nvim-treesitter",
+        envent = {"VimEnter"},
+        config = function()
+            require("..plugin.nvim-treesitter")
+        end,
+        --ensure_installed = require("..plugin.nvim-treesitter").ensure_installed,
+
+
+    },
 
 })
