@@ -54,4 +54,41 @@ require'nvim-treesitter.configs'.setup {
     -- Instead of true it can also be a list of languages
     additional_vim_regex_highlighting = false,
   },
+  
+  incremental_selection = {
+    enable = true,
+    keymaps = {
+      --init_selection = "gnn", -- set to `false` to disable one of the mappings
+      --node_incremental = "grn",
+      --scope_incremental = "grc",
+      --node_decremental = "grm",
+      init_selection = "<CR>", -- set to `false` to disable one of the mappings
+      node_incremental = "<CR>",
+      scope_incremental = "<TAB>",
+      node_decremental = "<BS>",
+    },
+  },
+  rainbow = {
+      enable = true,
+      extended_mode = true,
+      max_file_lines = nil,
+      colors = {
+          "#cc241d",
+          "#a89984",
+          "#b16286",
+          "#d79921",
+          "#689d6a",
+          "#d65d0e",
+          "#458588",
+      },
+      termcolors = {
+          "Red",
+          "Green",
+          "Yellow",
+          "Blue",
+          "Magenta",
+          "Cyan",
+          "White",
+      },
+  },
 }
