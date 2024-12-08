@@ -87,6 +87,14 @@ require("lazy").setup({
         -- this is equivalent to setup({}) function
     },
 -- tag
+    -- nvim-tree
+    {
+        "nvim-tree/nvim-tree.lua",
+        envent = {"VeryLazy"},
+        config = function()
+            require("..plugin.nvim-tree")
+        end,
+    },
     -- treesitter
     {
         "nvim-treesitter/nvim-treesitter",
