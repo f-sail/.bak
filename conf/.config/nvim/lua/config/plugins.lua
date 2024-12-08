@@ -91,6 +91,9 @@ require("lazy").setup({
     {
         "nvim-tree/nvim-tree.lua",
         envent = {"VeryLazy"},
+        dependencies = {
+            "nvim-tree/nvim-web-devicons",
+        },
         config = function()
             require("..plugin.nvim-tree")
         end,

@@ -23,3 +23,9 @@ require("nvim-tree").setup({
     dotfiles = true,
   },
 })
+
+
+local opts = { noremap = true, silent = true }
+local keymap = vim.keymap.set
+--keymap("n", "<leader>n", ":NvimTreeOpen<CR>", opts)
+keymap("n", "<leader>n", ":NvimTreeToggle<CR>", opts)
