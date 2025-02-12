@@ -43,11 +43,7 @@ require("lazy").setup({
 
 -- 
     -- flash.nvim
-    {
-        "folke/flash.nvim",
-        event = {"VeryLazy"},
-        keys = require("../plugin.flash").keys,
-    },
+    require("../plugin.flash"),
 
 -- cmp
 	-- Vscode-like pictograms
