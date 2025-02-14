@@ -11,7 +11,6 @@ if not (vim.uv or vim.loop).fs_stat(lazypath) then
 end
 vim.opt.rtp:prepend(lazypath)
 
-
 -- BufRead      当读取一个已存在的文件时触发。
 -- BufNewFile   当创建一个新文件时触发。
 -- BufWritePost 当文件被写入后触发。
@@ -24,27 +23,25 @@ vim.opt.rtp:prepend(lazypath)
 -- VeryLazy
 
 require("lazy").setup({
--- colorscheme
-    {
-        "vim-airline/vim-airline",
-        dependencies = {
-            "vim-airline/vim-airline-themes",
-        },
-        config = function()
-            require("..plugin.airline")
-        end,
-    },
-    -- vscode like
-    {"Mofiqul/vscode.nvim", event = {"VimEnter"}},
+-- theme
+    -- airline
+    require("plugin.theme").airline,
 
-    -- 
-    --{"tanvirtin/monokai.nvim", event = {"VimEnter"}},
-    --{ "lunarvim/darkplus.nvim", event = {"VimEnter"}},
+    -- colorscheme                                               
+        require("plugin.theme").colorscheme.vscode,
+        --require("../plugin.theme").colorscheme.monokai,
+        --require("../plugin.theme").colorscheme.darkplus,
+                                                                  
 
--- 
-    -- flash.nvim
-    require("../plugin.flash"),
+-- support 
+    -- flash
+    require("plugin.support").flash,
 
+    -- telescope
+    require("plugin.support").telescope,
+
+
+--[[
 -- cmp
 	-- Vscode-like pictograms
 	{"onsails/lspkind.nvim", event = { "VimEnter" }},
@@ -105,5 +102,6 @@ require("lazy").setup({
 
 
     },
+--]]
 
 })

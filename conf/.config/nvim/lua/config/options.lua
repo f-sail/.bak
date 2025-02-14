@@ -25,7 +25,7 @@ local options = {
   tabstop = 4,                              -- 制表符的宽度
   cursorline = true,                        -- 是否高亮当前行
   number = true,                            -- 是否显示行号
-  relativenumber = false,                   -- 是否显示相对行号
+  relativenumber = true,                    -- 是否显示相对行号
   numberwidth = 4,                          -- 设置行号列宽为 4
   signcolumn = "yes",                       -- 始终显示符号列
   wrap = true,                              -- 是否显示长行时换行
@@ -41,3 +41,5 @@ local options = {
 for k, v in pairs(options) do
   vim.opt[k] = v
 end
+
+

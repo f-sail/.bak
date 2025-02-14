@@ -1,9 +1,11 @@
--- flash.lua
+-- flash
 return {
   "folke/flash.nvim",
   event = "VeryLazy",
+
   ---@type Flash.Config
   opts = {},
+
   -- stylua: ignore
   keys = {
     { "s", mode = { "n", "x", "o" }, function() require("flash").jump() end, desc = "Flash" },
@@ -12,8 +14,10 @@ return {
     { "R", mode = { "o", "x" }, function() require("flash").treesitter_search() end, desc = "Treesitter Search" },
     { "<c-s>", mode = { "c" }, function() require("flash").toggle() end, desc = "Toggle Flash Search" },
   },
+
   -- labels = "abcdefghijklmnopqrstuvwxyz",
   labels = "asdfghjklqwertyuiopzxcvbnm",
+
   search = {
     -- search/jump in all windows
     multi_window = true,
@@ -55,6 +59,7 @@ return {
     -- it will either end in a jump or terminate the search
     max_length = false, ---@type number|false
   },
+
   jump = {
     -- save location in the jumplist
     jumplist = true,
@@ -77,6 +82,7 @@ return {
     -- 1: when pos == "end" and pos < current position
     offset = nil, ---@type number
   },
+
   label = {
     -- allow uppercase labels
     uppercase = true,
@@ -118,6 +124,7 @@ return {
       return { { opts.match.label, opts.hl_group } }
     end,
   },
+
   highlight = {
     -- show a backdrop with hl FlashBackdrop
     backdrop = true,
@@ -240,6 +247,7 @@ return {
       remote_op = { restore = true, motion = true },
     },
   },
+
   -- options for the floating window that shows the prompt,
   -- for regular jumps
   -- `require("flash").prompt()` is always available to get the prompt text
@@ -255,6 +263,7 @@ return {
       zindex = 1000,
     },
   },
+
   -- options for remote operator pending mode
   remote_op = {
     -- restore window views and cursor position

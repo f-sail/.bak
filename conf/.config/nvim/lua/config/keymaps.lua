@@ -50,6 +50,13 @@ keymap("n", "<leader>l", "$", opts)     -- 移动光标至行尾
 keymap("n", "<A-j>", ":m .+1<CR>==", opts)  -- 向下移动当前行
 keymap("n", "<A-k>", ":m .-2<CR>==", opts)  -- 向上移动当前行
 
+-- 切割窗口
+keymap("n", "<leader>v", ":vs<CR>", opts)   -- 水平切割
+keymap("n", "<leader>s", ":sp<CR>", opts)   -- 垂直切割
+
+-- 删除
+keymap("n", "dh", "d0", opts)   -- 删除至行首
+keymap("n", "dl", "d$", opts)   -- 删除至行尾
 
 
 -- 插入模式 ------------------------------------------------------------------------------------
@@ -82,3 +89,17 @@ keymap("x", "<A-k>", ":m '<-2<CR>gv=gv", opts)  -- 向上移动选中的文本
 -- keymap("t", "<C-j>", "<C-\\><C-N><C-w>j", term_opts)  -- 下移窗口
 -- keymap("t", "<C-k>", "<C-\\><C-N><C-w>k", term_opts)  -- 上移窗口
 -- keymap("t", "<C-l>", "<C-\\><C-N><C-w>l", term_opts)  -- 右移窗口
+
+
+vim.g.clipboard = {
+  name = 'xclip',
+  copy = {
+    ['+'] = 'xclip -selection clipboard',
+    ['*'] = 'xclip -selection clipboard',
+  },
+  paste = {
+    ['+'] = 'xclip -selection clipboard -o',
+    ['*'] = 'xclip -selection clipboard -o',
+  },
+  cache_enabled = 0,
+}
