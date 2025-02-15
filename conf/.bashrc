@@ -125,6 +125,9 @@ alias sbr='source ~/.bashrc'
 
 export PATH=$PATH:/home/sail/.local/bin
 export PATH=$PATH:/home/sail/.local/bin/src/vim/bin
+export PATH=$PATH:/home/sail/.local/share/nvim/mason/bin
+
+
 #export PROMPT_COMMAND='echo "$(pwd)" > ~/.current_path'
 
 #export PS1='\[\e[1;36m\]\u@\h: \[\e[34m\]\w\$\[\e[22;0m\] ' 
