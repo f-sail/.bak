@@ -124,7 +124,6 @@ alias vbr='vim ~/.bashrc'
 alias sbr='source ~/.bashrc'
 
 export PATH=$PATH:/home/sail/.local/bin
-export PATH=$PATH:/home/sail/.local/bin/src/vim/bin
 export PATH=$PATH:/home/sail/.local/share/nvim/mason/bin
 
 
