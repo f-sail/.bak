@@ -3,6 +3,7 @@ return {
     "nvim-tree/nvim-tree.lua",
     version = "*",
     lazy = true,
+    tag = 'nightly',
     dependencies = {
         require("plugin/theme.nvim-web-devicons"),
         --"nvim-tree/nvim-web-devicons",
@@ -22,7 +23,8 @@ return {
         vim.opt.termguicolors = true
 
         -- empty setup using defaults
-        require("nvim-tree").setup()
+        require("nvim-tree").setup({
+        })
 
         -- OR setup with some options
         require("nvim-tree").setup({
@@ -41,4 +43,3 @@ return {
        })
     end,
 }
-

@@ -70,6 +70,9 @@ keymap("n", "dh", "d0", opts)   -- 删除至行首
 keymap("n", "dl", "d$", opts)   -- 删除至行尾
 
 
+keymap("n", "<leader>sh", ":helptags ~/.local/share/nvim/runtime/doc<CR>", opts)
+
+
 -- 插入模式_INSERT ------------------------------------------------------------------------------------
 -- 快速按 jk 或 kj 退出插入模式
 keymap("i", "jk", "<ESC>l", opts)

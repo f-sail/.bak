@@ -11,7 +11,8 @@ return {
         "LspUninstall",
     },
     dependencies = {
-        { "rmagatti/goto-preview", event = "VeryLazy" },
+        require("plugin/lsp.goto-preview"),
+        require("plugin/lsp.mason-lspconfig"),
     },
     config = function()
         -- local lspconfig = require("lspconfig")

@@ -32,7 +32,6 @@ require("lazy").setup({
         require("plugin.theme").colorscheme.vscode,
         --require("../plugin.theme").colorscheme.monokai,
         --require("../plugin.theme").colorscheme.darkplus,
-                                                                  
 
 -- support 
     -- flash
@@ -54,11 +53,13 @@ require("lazy").setup({
 
     -- nvim-lspconfig
     require("plugin.lsp").lspconfig,
-    
 
+
+-- cmp
+    -- nvim-cmp
+    require("plugin.complete").cmp,
 
 --[[
--- cmp
 	-- Vscode-like pictograms
 	{"onsails/lspkind.nvim", event = { "VimEnter" }},
 

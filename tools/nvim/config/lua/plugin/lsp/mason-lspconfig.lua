@@ -1,7 +1,7 @@
 ---@type mason-lspconfig.config
 return {
     "williamboman/mason-lspconfig.nvim",
-    -- event = "VeryLazy",
+    event = "VeryLazy",
     dependencies = {
         require("plugin/lsp.mason"),
     },

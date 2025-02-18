@@ -1,7 +1,7 @@
 ---@type mason.config
 return {
     "williamboman/mason.nvim",
-    -- event = "VeryLazy",
+    event = "VeryLazy",
     opts = {
         pip = {
             upgrade_pip = false,
